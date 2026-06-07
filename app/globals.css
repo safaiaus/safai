@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces — deep ink with cool blue undertone */
+  --bg: #0A0C14;
+  --bg-elev-1: #11141E;
+  --bg-elev-2: #161A26;
+  --surface: rgba(255, 255, 255, 0.028);
+  --surface-hi: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hi: rgba(255, 255, 255, 0.15);
+
+  /* Text — warm cream */
+  --text: #F5F2EA;
+  --text-muted: #9CA0B0;
+  --text-dim: #5C5F6E;
+
+  /* Primary — Electric Iris */
+  --accent: #7B5CFF;
+  --accent-soft: #9B82FF;
+  --accent-glow: rgba(123, 92, 255, 0.22);
+  --accent-line: rgba(123, 92, 255, 0.4);
+
+  /* Secondary — Lime Pulse */
+  --accent-2: #C8FF3D;
+  --accent-2-soft: #DBFF6A;
+  --accent-2-glow: rgba(200, 255, 61, 0.20);
+  --accent-2-line: rgba(200, 255, 61, 0.45);
+
+  /* Tertiary — Coral (sparingly) */
+  --accent-3: #FF7B5C;
+  --accent-3-glow: rgba(255, 123, 92, 0.18);
+
+  /* Status */
+  --positive: #52E0B7;
+  --warn: #FFB547;
+  --danger: #FF6B5C;
+
+  /* Spacing */
+  --container: 1280px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-bg-elev-1: var(--bg-elev-1);
+  --color-bg-elev-2: var(--bg-elev-2);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-dim: var(--text-dim);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-positive: var(--positive);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+
+/* Ambient dot grid behind everything */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.025) 1px, transparent 0);
+  background-size: 28px 28px;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.shell {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+  z-index: 1;
 }
