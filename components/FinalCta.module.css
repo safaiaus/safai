@@ -1,0 +1,67 @@
+.finalCta {
+  padding: 160px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.finalCta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, var(--accent-glow), transparent 60%);
+  pointer-events: none;
+}
+.inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: inline-flex;
+}
+.finalCta h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin: 0 0 24px;
+  color: var(--text);
+}
+.finalCta h2 em {
+  color: transparent;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.finalCta p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin: 0 auto 40px;
+  max-width: 560px;
+  line-height: 1.5;
+}
+.buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.5;
+  box-shadow: 0 0 10px var(--accent);
+  pointer-events: none;
+}
+.particle:nth-child(1) { top: 20%; left: 15%; animation: float 6s ease-in-out infinite; }
+.particle:nth-child(2) { top: 30%; right: 20%; animation: float 8s ease-in-out infinite reverse; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); }
+.particle:nth-child(3) { bottom: 30%; left: 25%; animation: float 7s ease-in-out infinite; }
+.particle:nth-child(4) { top: 60%; right: 15%; animation: float 9s ease-in-out infinite reverse; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); }
+.particle:nth-child(5) { bottom: 20%; right: 30%; animation: float 6.5s ease-in-out infinite; }
+.particle:nth-child(6) { top: 45%; left: 8%; animation: float 7.5s ease-in-out infinite; background: var(--accent-3); box-shadow: 0 0 10px var(--accent-3); }
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+  50%      { transform: translate(20px, -30px); opacity: 1; }
+}
