@@ -20,7 +20,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Safai — Responsible AI, Cyber & Compliance Training",
+  title: "Safai · Responsible AI, Cyber & Compliance Training",
   description:
     "Workforce training and certification in AI governance, cyber security and workplace compliance, built for Australian organisations.",
 };
