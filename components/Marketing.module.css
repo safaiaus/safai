@@ -91,3 +91,18 @@
   .fieldTwo { grid-template-columns: 1fr; }
   .statsRow { gap: 32px; }
 }
+
+/* Principles (About) */
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.principle { padding: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; }
+.principleN { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; }
+.principle h4 { font-family: var(--font-serif); font-weight: 400; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 10px; color: var(--text); }
+.principle p { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.55; }
+
+/* Contact card (About / Community) */
+.contactCard { max-width: 720px; margin: 0 auto; text-align: center; background: var(--bg-elev-1); border: 1px solid var(--border-hi); border-radius: 20px; padding: 40px; }
+.contactCard h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; margin: 0 0 12px; color: var(--text); }
+.contactCard p { font-size: 15px; color: var(--text-muted); margin: 0 0 24px; line-height: 1.6; }
+.contactRow { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 800px) { .principles { grid-template-columns: 1fr; } }
