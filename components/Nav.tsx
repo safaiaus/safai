@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -30,13 +33,22 @@ export default function Nav() {
         </ul>
 
         <div className={styles.navActions}>
-          <Link href="/signin" className={styles.navLogin}>Sign in</Link>
-          <Link href="/signup" className="btn btn-primary">
-            Get started
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
-          </Link>
+          <Show when="signed-out">
+            <SignInButton mode="modal">
+              <button className={styles.navLogin}>Sign in</button>
+            </SignInButton>
+            <Link href="/sign-up" className="btn btn-primary">
+              Get started
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </Show>
+
+          <Show when="signed-in">
+            <Link href="/dashboard" className={styles.navLogin}>Dashboard</Link>
+            <UserButton />
+          </Show>
         </div>
       </div>
     </nav>
