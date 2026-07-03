@@ -40,13 +40,13 @@ export default function AuthForm({ mode }: { mode: "signin" | "signup" }) {
           {isSignup && (
             <div className={styles.field}>
               <label>Full name</label>
-              <input type="text" placeholder="Your name" />
+              <input type="text" placeholder="Your name" suppressHydrationWarning />
             </div>
           )}
 
           <div className={styles.field}>
             <label>{isSignup ? "Work email" : "Email address"}</label>
-            <input type="email" placeholder="you@company.com" />
+            <input type="email" placeholder="you@company.com" suppressHydrationWarning />
           </div>
 
           <div className={styles.field}>
@@ -62,6 +62,7 @@ export default function AuthForm({ mode }: { mode: "signin" | "signup" }) {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder={isSignup ? "Choose a strong password" : "••••••••"}
+                suppressHydrationWarning
               />
               <button
                 type="button"
