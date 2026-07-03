@@ -106,3 +106,15 @@
 .contactRow { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
 @media (max-width: 800px) { .principles { grid-template-columns: 1fr; } }
+
+/* Resource grid (Community) */
+.resourceGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.resourceCard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: all 0.3s; display: flex; flex-direction: column; }
+.resourceCard:hover { border-color: var(--border-hi); background: var(--surface-hi); transform: translateY(-2px); }
+.resourceCard h3 { font-family: var(--font-serif); font-weight: 400; font-size: 21px; letter-spacing: -0.015em; margin: 0 0 10px; color: var(--text); }
+.resourceCard p { font-size: 14px; color: var(--text-muted); margin: 0 0 18px; line-height: 1.55; flex: 1; }
+.resourceLink { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--accent-2); transition: opacity 0.2s; }
+.resourceLink:hover { opacity: 0.7; }
+
+@media (max-width: 900px) { .resourceGrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .resourceGrid { grid-template-columns: 1fr; } }
