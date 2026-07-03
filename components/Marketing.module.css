@@ -1,0 +1,93 @@
+.pageHeader { padding: 140px 0 60px; position: relative; overflow: hidden; }
+.pageHeader::before {
+  content: ''; position: absolute; top: -100px; left: 50%;
+  transform: translateX(-50%); width: 1100px; height: 700px;
+  background:
+    radial-gradient(circle at 30% 50%, var(--accent-glow), transparent 50%),
+    radial-gradient(circle at 70% 60%, var(--accent-2-glow), transparent 50%);
+  pointer-events: none; opacity: 0.5;
+}
+.breadcrumb {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+  color: var(--text-dim); text-transform: uppercase; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px; position: relative; z-index: 1;
+}
+.breadcrumb a { color: var(--text-muted); }
+.breadcrumb a:hover { color: var(--text); }
+.pageHeader h1 {
+  font-family: var(--font-serif); font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 0.98;
+  letter-spacing: -0.025em; margin: 0 0 24px; color: var(--text);
+  position: relative; z-index: 1;
+}
+.pageHeader h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.lede {
+  font-size: 17px; color: var(--text-muted); max-width: 620px;
+  margin: 0; line-height: 1.55; position: relative; z-index: 1;
+}
+.heroCtas { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
+
+.statsRow {
+  display: flex; gap: 56px; flex-wrap: wrap; margin-top: 56px;
+  padding-top: 40px; border-top: 1px solid var(--border);
+  position: relative; z-index: 1;
+}
+.stat { display: flex; flex-direction: column; gap: 6px; }
+.statV { font-family: var(--font-serif); font-size: 38px; line-height: 1; letter-spacing: -0.02em; color: var(--text); }
+.statV em { color: var(--accent-2); font-style: normal; font-size: 22px; }
+.statL { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+
+.section { padding: 100px 0; }
+.sectionTint { background: linear-gradient(180deg, transparent, rgba(123, 92, 255, 0.03)); }
+.sectionTint2 { background: linear-gradient(180deg, transparent, rgba(200, 255, 61, 0.02)); }
+.sectionHead { text-align: center; margin-bottom: 56px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); display: inline-flex; margin-bottom: 18px; }
+.sectionHead h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 14px; color: var(--text); }
+.sectionHead h2 em { font-style: italic; background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.sectionHead p { color: var(--text-muted); font-size: 16px; margin: 0; }
+.center { text-align: center; }
+
+.featureGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.featCard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: all 0.3s; }
+.featCard:hover { border-color: var(--border-hi); background: var(--surface-hi); transform: translateY(-2px); }
+.featIcon { width: 40px; height: 40px; border-radius: 10px; background: var(--surface-hi); border: 1px solid var(--border-hi); display: grid; place-items: center; color: var(--accent); margin-bottom: 18px; }
+.featCard h3 { font-family: var(--font-serif); font-weight: 400; font-size: 22px; line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.015em; color: var(--text); }
+.featCard p { font-size: 14px; color: var(--text-muted); margin: 0; line-height: 1.55; }
+
+.trustRow { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.trustBadge { display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: var(--surface); border: 1px solid var(--border-hi); border-radius: 12px; font-size: 14px; color: var(--text); }
+.trustBadge svg { color: var(--accent-2); flex-shrink: 0; }
+
+.contactGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 960px; margin: 0 auto; align-items: start; }
+.contactAside h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 16px; color: var(--text); }
+.contactAside h2 em { font-style: italic; background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.contactAside p { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0 0 24px; }
+.contactPoints { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.contactPoints li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--text); }
+.contactPoints svg { color: var(--accent-2); flex-shrink: 0; margin-top: 3px; }
+.formCard { background: var(--bg-elev-1); border: 1px solid var(--border-hi); border-radius: 20px; padding: 32px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.field input, .field select, .field textarea { width: 100%; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border-hi); border-radius: 10px; color: var(--text); font-size: 14px; font-family: inherit; outline: none; transition: all 0.2s; }
+.field textarea { resize: vertical; min-height: 90px; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent-line); box-shadow: 0 0 0 4px var(--accent-glow); }
+.fieldTwo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.formCta { width: 100%; justify-content: center; margin-top: 8px; }
+.sent { text-align: center; padding: 40px 20px; }
+.sent h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; color: var(--text); margin: 0 0 8px; }
+.sent p { color: var(--text-muted); font-size: 14px; margin: 0; }
+
+@media (max-width: 900px) {
+  .featureGrid { grid-template-columns: 1fr 1fr; }
+  .contactGrid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .featureGrid { grid-template-columns: 1fr; }
+  .fieldTwo { grid-template-columns: 1fr; }
+  .statsRow { gap: 32px; }
+}
