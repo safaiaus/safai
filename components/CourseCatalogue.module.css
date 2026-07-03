@@ -23,8 +23,7 @@
 .pills { display: flex; gap: 8px; flex-wrap: wrap; }
 .pill { padding: 9px 18px; border-radius: 999px; border: 1px solid var(--border-hi); background: var(--surface); color: var(--text-muted); font-size: 13px; transition: all 0.2s; }
 .pill:hover { color: var(--text); border-color: var(--accent-line); }
-.pillActive { background: var(--text); color: var(--bg); border-color: var(--text); }
-
+.pill.pillActive { background: var(--text); color: var(--bg); border-color: var(--text); }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 12px 0 100px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
 .card:hover { border-color: var(--border-hi); transform: translateY(-3px); }
